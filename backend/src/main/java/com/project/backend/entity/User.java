@@ -1,12 +1,11 @@
 package com.project.backend.entity;
 
-import jakarta.persistence.Column;
+import java.time.LocalDateTime;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-
-import java.time.LocalDateTime;
 
 @Entity
 public class User {
@@ -27,6 +26,11 @@ public class User {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    private boolean isAdmin; // ou utilisez un rôle ou un type d'utilisateur
+
+    public boolean isAdmin() {
+        return isAdmin;
     }
 
     public String getName() {
